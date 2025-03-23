@@ -12,3 +12,14 @@ function toggleMenu() {
   }
   
   window.onload = setCurrentYear;
+
+  function trackCVDownload() {
+    if (typeof gtag === 'function') {
+      gtag('event', 'download_cv_click', {
+        event_category: 'Engagement',
+        event_label: 'Download CV Button',
+      });
+    } else {
+      console.warn("Google Analytics is not loaded");
+    }
+  }
